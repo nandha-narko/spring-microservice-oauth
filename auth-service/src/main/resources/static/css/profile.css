@@ -1,0 +1,164 @@
+
+.navbar-header.col {
+    padding: 0 !important;
+}	
+.navbar {		
+    background: #1571a8;
+    color: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 0px !important;
+    box-shadow: 0 0 4px rgba(0,0,0,.1);
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 5px 0 5px !important;
+}
+
+.nav-item>a:hover {
+    background-color: inherit !important;
+}
+
+.nav-link img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -8px 15px;
+    margin-right: 0px;
+}
+.navbar .navbar-brand {
+    color: #fff;
+    padding-left: 0;
+    padding-right: 50px;
+    font-size: 30px;
+    line-height: 60px;
+    height: auto;
+}
+.navbar .navbar-brand i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.navbar-brand img {
+    height: 60px;
+    float: left;
+    padding-right: 10px;
+}
+
+.navbar-nav {
+    height: 90px;
+}
+
+.navbar .nav-item {
+    margin-top: 18px;
+}
+
+.navbar .dropdown-item i {
+    font-size: 16px;
+    min-width: 22px;
+}
+.navbar .nav-item.open > a {
+    background: url(/images/avatar_bg.png);
+    background-size: 55px 55px;
+}
+.navbar .dropdown-menu {
+    border-radius: 1px;
+    border-color: #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    border-top: 0px !important;
+    min-width: 250px !important;
+}
+.navbar .dropdown-menu li a {
+    color: #777;
+    padding: 8px 20px;
+    line-height: normal;
+}
+
+.navbar .dropdown-item .material-icons {
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.navbar .badge {
+    background: #f44336;
+    font-size: 11px;
+    border-radius: 20px;
+    position: absolute;
+    min-width: 10px;
+    padding: 4px 6px 0;
+    min-height: 18px;
+    top: 5px;
+    
+}
+.navbar ul.nav li a.notifications, .navbar ul.nav li a.messages {
+    position: relative;
+    margin-right: 10px;
+}
+.navbar ul.nav li a.messages {
+    margin-right: 20px;
+}
+.navbar a.notifications .badge {
+    margin-left: -8px;
+}
+.navbar a.messages .badge {
+    margin-left: -4px;
+}	
+.navbar .active a, .navbar .active a:hover, .navbar .active a:focus {
+    background: transparent !important;
+}
+
+.navbar a:focus {
+    background-color: inherit !important;
+}
+
+.nav-username {
+    height: 50px;
+    padding: 15px 15px 0 0;
+    font-weight: bold;
+}
+
+main .container-fluid {
+    height: calc(100vh - 120px)
+}
+
+.full-height {
+    height: 100%;
+}
+
+.welcome-panel {
+    min-height: 400px;
+} 
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    text-align: center;
+}
+
+.avatar img {
+    height: 128px;
+    width: 128px;
+}
+
+@media (min-width: 1200px){
+    .form-inline .input-group {
+        width: 300px;
+        margin-left: 30px;
+    }
+}
+@media (max-width: 1199px){
+    .form-inline {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .input-group {
+        width: 100%;
+    }
+}

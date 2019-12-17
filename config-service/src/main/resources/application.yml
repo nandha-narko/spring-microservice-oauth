@@ -1,0 +1,17 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/nandhaaas/config
+          search-paths:
+          - 'auth-service'
+          - 'ui-angular'
+  application:
+    name: config-service
+  security:
+    user:
+      name: nandha
+      password: nandha

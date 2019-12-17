@@ -1,0 +1,43 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: errand-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: others 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        notificationOutput:
+          destination: notifications_processed
+        notificationInput:
+          destination: notifications
+      default:
+        contentType: application/json
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: nandha.noreply@gmail.com
+    password: Nandha123?
+    test-connection: false
+    properties:
+      mail:
+        smtp:
+          connectiontimeout: 60000
+          timeout: 60000
+          writetimeout: 60000
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: smtp.gmail.com
+            enable: true

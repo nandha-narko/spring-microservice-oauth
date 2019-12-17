@@ -1,0 +1,10 @@
+{
+    "properties": [
+      {
+        "name": "nandhas.enableNotification",
+        "type": "java.lang.Boolean",
+        "description": "Whether to enable notification service.",
+        "defaultValue": false
+      }
+    ]
+}

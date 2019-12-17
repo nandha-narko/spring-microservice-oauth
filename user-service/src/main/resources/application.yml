@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: user-service
+  security:
+    oauth2:
+      resource:
+        token-info-uri: http://localhost:8080/oauth/check_token
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: user 
+server:
+  port: 8090
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+logging:
+  level:
+    org.springframework.security.oauth: DEBUG

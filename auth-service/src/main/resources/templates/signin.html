@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Sign In - Nandha</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/site.css}" />
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/css/font-awesome.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/webjars/jquery-validation/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/webjars/js-cookie/js.cookie.js"></script>
+</head>
+
+<body>
+	<div class="box-form">
+		<form th:action="@{/signin}" method="POST" id="login-form" autocomplete="off">
+			<div class="logo">
+				<img src="/images/logo.png" alt="Avatar">
+			</div>
+			<div th:if="${param.error}" class="alert alert-danger text-center" role="alert">
+				Invalid username or password
+			</div>
+			<div th:if="${(param.code != null && T(nandhas.common.enums.MessageCode).values()[param.code[0]] == T(nandhas.common.enums.MessageCode).ActivationSent)}"
+				class="alert alert-success text-center" role="alert">
+				Your activation link has been sent to your registered email address.
+			</div>
+			<div th:if="${(param.code != null && T(nandhas.common.enums.MessageCode).values()[param.code[0]] == T(nandhas.common.enums.MessageCode).ActivationSuccessful)}"
+				class="alert alert-success text-center" role="alert">
+				Your account has been activated successfully.
+			</div>
+			<div th:if="${(param.code != null && T(nandhas.common.enums.MessageCode).values()[param.code[0]] == T(nandhas.common.enums.MessageCode).ActivationExpired)}"
+				class="alert alert-danger text-center" role="alert">
+				Your activation link has been expired. Please <a th:href="@{'/resend/' + ${userId}}">click here</a> to
+				send again.
+			</div>
+			<div th:if="${(param.code != null && T(nandhas.common.enums.MessageCode).values()[param.code[0]] == T(nandhas.common.enums.MessageCode).ActivationInvalid)}"
+				class="alert alert-danger text-center" role="alert">
+				Your activation link is invalid.
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+					<input type="email" class="form-control" name="email" th:placeholder="Email" required="required">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+					<input type="password" class="form-control" name="password" th:placeholder="Password"
+						required="required">
+				</div>
+			</div>
+			<div class="form-group">
+				<button type="submit" th:value="Login" class="btn btn-lg btn-block signin-btn">Sign in</button>
+			</div>
+
+			<div class="text-center small">Don't have an account? <a href="/signup">Sign up</a></div>
+			<div class="text-center small"><a href="/reset-password">Forgot password?</a></div>
+			<div class="or-seperator"><b>or</b></div>
+			<!-- 			<p th:text="${email}"></p> -->
+			<p class="hint-text">Sign in with</p>
+			<div class="social-btn text-center">
+				<a href="/login/google" class="btn btn-danger btn-lg" title="Google"><i class="fa fa-google"></i></a>
+				<a href="/login/facebook" class="btn btn-primary btn-lg" title="Facebook"><i
+						class="fa fa-facebook"></i></a>
+				<a href="/login/twitter" class="btn btn-info btn-lg" title="Twitter"><i class="fa fa-twitter"></i></a>
+				<a href="/login/linkedin" class="btn btn-linkedin btn-lg" title="LinkedIn"><i
+						class="fa fa-linkedin"></i></a>
+				<a href="/login/github" class="btn btn-github btn-lg" title="Github"><i class="fa fa-github"></i></a>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

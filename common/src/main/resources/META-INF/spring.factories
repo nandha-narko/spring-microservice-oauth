@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  nandhas.common.config.CommonAutoConfiguration,\
+  nandhas.common.config.NotificationAutoConfiguration

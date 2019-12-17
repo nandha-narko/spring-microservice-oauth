@@ -1,0 +1,30 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: errand-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        notificationOutput:
+          destination: notifications_processed
+        notificationInput:
+          destination: notifications
+      default:
+        contentType: application/json
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: nandha.noreply@gmail.com
+    password: nqgcpndlvmcpmwpe
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

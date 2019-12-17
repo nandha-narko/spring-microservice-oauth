@@ -1,0 +1,253 @@
+body {
+    color: #434343 !important;
+    background: #dfe7e9 !important;
+    font-family: 'Varela Round', sans-serif !important;
+}
+
+.form-control, .form-control:focus, .input-group-addon {
+    border-color: #e1e1e1;
+    border-radius: 0;
+}
+
+.signin-form {
+    margin: 0 auto;
+}
+
+.signin-form form {
+    background: #fff;
+    padding: 20px 60px 60px 60px;
+}
+
+.signin-form a {
+    color: #1571a8;
+}    
+.signin-form h2 {
+    text-align: center;
+    font-size: 34px;
+    margin: 10px 0 15px;
+}
+
+.signin-form .form-group {
+    margin-bottom: 30px;
+}
+.signin-form label {
+    font-weight: normal;
+    font-size: 13px;
+}
+.signin-form .form-control {
+    min-height: 45px;
+    box-shadow: none !important;
+    border-width: 0 0 1px 0;
+}	
+.signin-form .input-group-addon {
+    max-width: 42px;
+    text-align: center;
+    background: none;
+    border-width: 0 0 1px 0;
+    padding-left: 5px;
+}
+.signin-form .btn {        
+    font-size: 18px;
+    line-height: 26px;        
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+.signin-form .small {
+    font-size: 13px;
+}
+.signin-form .fa {
+    font-size: 21px;
+}
+.signin-form .fa-paper-plane {
+    font-size: 15px;
+}
+.signin-btn {
+    text-align: center;
+    background: #1571a8;
+    border-color: #105a86;
+    transition: all 0.4s;
+}
+.signin-btn:hover {
+    background: #105a86;
+    opacity: 0.8;
+}
+
+.box-form {
+    margin: 0 auto;
+}
+.box-form h2 {
+    color: #636363;
+    margin: 0 0 15px;
+    text-align: center;
+}
+.box-form .lead {
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.box-form form {		
+    background: #fff;
+    padding: 60px;
+}
+.box-form .form-group {
+    margin-bottom: 30px;
+}
+.box-form .logo {
+    margin: 0px auto 40px;
+    width: 137px;
+    height: 137px;
+    z-index: 9;
+}
+.box-form .logo img {
+    width: 100%;
+}
+.box-form label {
+    font-weight: normal;
+    font-size: 13px;
+}
+.box-form .hint-text {
+    color: #999;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.box-form .form-control {
+    min-height: 45px;
+    box-shadow: none !important;
+    border-width: 0 0 1px 0;
+}	
+.box-form .input-group-addon {
+    max-width: 42px;
+    text-align: center;
+    background: none;
+    border-width: 0 0 1px 0;
+    padding-left: 5px;
+}
+.box-form .btn {
+    color: white;
+	font-size: 18px;
+    line-height: 26px;        
+    font-weight: bold;
+    text-align: center;
+    background: #1571a8;
+    transition: all 0.4s;
+}
+.box-form .btn:hover, .box-form .btn:focus {
+    background: #105a86;
+    opacity: 0.8;
+}
+.box-form a {
+    color: #1571a8;
+    text-decoration: none;
+}
+.box-form .small {
+    font-size: 13px;
+}
+.box-form a:hover {
+    text-decoration: underline;
+}
+.box-form .fa {
+    font-size: 21px;
+}
+.box-form .fa-paper-plane {
+    font-size: 15px;
+}
+.box-form .embed {
+    color: #fff;
+    left: 9px;
+    top: 18px;
+    font-size: 7px;
+    position: absolute;
+}
+.box-form .fa-times {
+    color: #df4930;
+}
+
+.box-form .fa-check {
+    color: green;
+}
+
+
+.or-seperator {
+    margin: 50px 0 15px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+.or-seperator b {
+    padding: 0 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    position: relative;
+    top: -22px;
+    z-index: 1;
+}
+.social-btn .btn {
+    color: #fff;
+    margin: 10px 0 0 20px;
+    font-size: 15px;
+    width: 55px;
+    height: 55px;
+    line-height: 38px;
+    border-radius: 50%;
+    font-weight: normal;
+    text-align: center;
+    border: none;
+    transition: all 0.4s;
+}	
+.social-btn .btn:first-child {
+    margin-left: 0;
+}
+.social-btn .btn:hover {
+    opacity: 0.8;
+}
+.social-btn .btn-primary {
+    background: #507cc0;
+}
+.social-btn .btn-info {
+    background: #64ccf1;
+}
+.social-btn .btn-danger {
+    background: #df4930;
+}
+.social-btn .btn-github {
+    background: #000000;
+    color: #fff;
+}
+.social-btn .btn-linkedin {
+	background: #0073b1;
+	color: #fff;
+}
+.social-btn .btn i {
+    font-size: 20px;
+}
+
+@media (min-width: 601px) {
+    .signin-form {
+        width: 500px;
+        padding: 80px 0;
+    }
+
+    .signin-form form {
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .box-form {
+        width: 500px;
+        padding: 80px 0;
+    }
+
+    .box-form form {		
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+}
