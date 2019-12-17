@@ -16,4 +16,8 @@ export class AppComponent implements OnInit {
     this.securityService.initialize();
     this.isAuthorized = this.securityService.isAuthorized();
   }
+
+  login() {
+    this.securityService.login();
+  }
 }

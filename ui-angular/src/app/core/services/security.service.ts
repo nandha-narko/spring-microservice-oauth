@@ -3,7 +3,7 @@ import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 import { HttpClient } from '@angular/common/http';
 
 const AUTH_CONFIG: AuthConfig = {
-  clientId: "nandhas-web",
+  clientId: "ui-angular",
   loginUrl: "http://localhost:8080/oauth/authorize",
   logoutUrl: "http://localhost:8080/logout",
   redirectUri: window.location.origin,
