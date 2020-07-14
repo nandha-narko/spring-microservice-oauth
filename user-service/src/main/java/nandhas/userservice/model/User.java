@@ -1,25 +1,30 @@
 package nandhas.userservice.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
 public class User {
 
     @Id
-    private String userId;
+    private String id;
     private String name;
     private String email;
     private String password;
+    private List<String> roles;
     private Boolean active;
+    private String avatarUrl;
+    private String provider;
 
     public User() {
     }
 
-    public String getUserId() {
-        return this.userId;
+    public String getId() {
+        return this.id;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -46,6 +51,14 @@ public class User {
         this.password = password;
     }
 
+    public List<String> getRoles() {
+        return this.roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
     public Boolean isActive() {
         return this.active;
     }
@@ -58,13 +71,29 @@ public class User {
         this.active = active;
     }
 
+    public String getAvatarUrl() {
+        return this.avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public String getProvider() {
+        return this.provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
+    }
+
     @Override
     public String toString() {
         return "{" +
-            " userId='" + getUserId() + "'" +
+            " userId='" + getId() + "'" +
             ", name='" + getName() + "'" +
             ", email='" + getEmail() + "'" +
-            ", password='" + getPassword() + "'" +
+            ", roles='" + getRoles() + "'" +
             ", active='" + isActive() + "'" +
             "}";
     }

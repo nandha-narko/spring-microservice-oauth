@@ -1,5 +1,7 @@
 package nandhas.common.dto.userservice;
 
+import java.util.List;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -10,7 +12,7 @@ import nandhas.common.validator.ValidPassword;
  */
 public class UserDto {
 
-    private String userId;
+    private String id;
     @NotNull
     private String name;
     @NotNull
@@ -19,15 +21,17 @@ public class UserDto {
     @NotNull
     @ValidPassword
     private String password;
+    private List<String> roles;
     private Boolean active;
     private String avatarUrl;
+    private String provider;
 
-    public String getUserId() {
-        return this.userId;
+    public String getId() {
+        return this.id;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -54,6 +58,14 @@ public class UserDto {
         this.password = password;
     }
 
+    public List<String> getRoles() {
+        return this.roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
     public Boolean isActive() {
         return this.active;
     }
@@ -72,6 +84,14 @@ public class UserDto {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public String getProvider() {
+        return this.provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
     }
 
     @Override

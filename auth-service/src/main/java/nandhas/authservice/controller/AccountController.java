@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import nandhas.authservice.event.SendActivationEvent;
+import nandhas.authservice.dto.CurrentUser;
+import nandhas.authservice.dto.CustomUserPrincipal;
 import nandhas.authservice.event.ResetPasswordEvent;
-import nandhas.authservice.service.UserService;
+import nandhas.authservice.service.CustomUserService;
 import nandhas.common.client.UserServiceClient;
 import nandhas.common.dto.userservice.ChangePasswordDto;
 import nandhas.common.dto.userservice.TokenDto;
@@ -57,7 +59,7 @@ public class AccountController {
     private String resetPasswordSuccessMessage;
 
     @Autowired
-    UserService userService;
+    CustomUserService userService;
 
     @Autowired
     UserServiceClient userServiceClient;
@@ -148,10 +150,10 @@ public class AccountController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String myProfile(@ModelAttribute("user") UserDto user) {
-        UserDto userDto = userServiceClient.getUser(AuthUtil.getUserId());
-        user.setName(userDto.getName());
-        user.setEmail(userDto.getEmail());
+    public String myProfile(@ModelAttribute("user") UserDto user, @CurrentUser CustomUserPrincipal userPrincipal) {
+        user.setName(userPrincipal.getName());
+        user.setEmail(userPrincipal.getEmail());
+        user.setAvatarUrl(userPrincipal.getAvatar());
         return "my-profile";
     }
 

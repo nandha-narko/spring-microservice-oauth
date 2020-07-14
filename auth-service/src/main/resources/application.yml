@@ -3,6 +3,29 @@ nandhas:
 server:
   port: 8080
 spring:
+  security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: 662755376164-cs6a2qual95s5sjjgb97djeuerriln1p.apps.googleusercontent.com
+              clientSecret: OVGohjL-WND8hRp4pta3_MvU
+              redirect-uri: "{baseUrl}/login/callback/{registrationId}"
+              scope:
+                - email
+                - profile
+            facebook:
+              clientId: 233668646673605
+              clientSecret: 33b17e044ee6a4fa383f46ec6e28ea1d
+              scope:
+                - email
+                - public_profile
+            github:
+              clientId: bd1c0a783ccdd1c9b9e4
+              clientSecret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
+              scope:
+                - user:email
+                - read:user
   thymeleaf:
     mode: LEGACYHTML5
     cache: false

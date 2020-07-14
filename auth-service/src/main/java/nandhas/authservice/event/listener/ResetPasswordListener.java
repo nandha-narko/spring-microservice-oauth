@@ -27,7 +27,7 @@ public class ResetPasswordListener implements ApplicationListener<ResetPasswordE
     public void onApplicationEvent(ResetPasswordEvent event) {
         final UserDto userDto = event.getUser();
         final TokenDto tokenDto = userServiceClient
-                .createToken(new TokenDto(TokenType.ResetPassword, userDto.getUserId()));
+                .createToken(new TokenDto(TokenType.ResetPassword, userDto.getId()));
         sendNotification(userDto, tokenDto, event);
     }
 

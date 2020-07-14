@@ -26,7 +26,7 @@ public class SendActivationListener implements ApplicationListener<SendActivatio
     @Override
     public void onApplicationEvent(SendActivationEvent event) {
         final UserDto userDto = event.getUser();
-        final TokenDto tokenDto = userServiceClient.createToken(new TokenDto(TokenType.Activation, userDto.getUserId()));
+        final TokenDto tokenDto = userServiceClient.createToken(new TokenDto(TokenType.Activation, userDto.getId()));
         sendNotification(userDto, tokenDto, event);
     }
 

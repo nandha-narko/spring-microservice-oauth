@@ -4,7 +4,7 @@ import java.security.Principal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import nandhas.authservice.service.UserService;
+import nandhas.authservice.service.CustomUserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    CustomUserService userService;
 
     @Autowired
     ApplicationEventPublisher eventPublisher;

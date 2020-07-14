@@ -41,6 +41,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .authorities("USER", "ADMIN")
                 .scopes("openid", "profile")
                 .resourceIds("user-service")
+                .redirectUris("http://localhost:4200")
                 .autoApprove(true)
                 .accessTokenValiditySeconds(600)
             .and()

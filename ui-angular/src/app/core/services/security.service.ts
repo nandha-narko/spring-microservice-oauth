@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 import { HttpClient } from '@angular/common/http';
+import * as jwt_decode from 'jwt-decode';
 
 const AUTH_CONFIG: AuthConfig = {
   clientId: "ui-angular",
@@ -8,6 +9,7 @@ const AUTH_CONFIG: AuthConfig = {
   logoutUrl: "http://localhost:8080/logout",
   redirectUri: window.location.origin,
   scope: "openid profile",
+  responseType: "token id_token",
   oidc: false,
   requireHttps: false
 }
@@ -16,6 +18,9 @@ const AUTH_CONFIG: AuthConfig = {
   providedIn: 'root'
 })
 export class SecurityService {
+
+  private userName: string;
+  private userAvatar: string;
 
   constructor(
     private oauthService: OAuthService,
@@ -30,20 +35,25 @@ export class SecurityService {
     // It doesn't send the user the the login page
     this.oauthService.tryLogin({
         onTokenReceived: (info) => {
-            console.debug('state', info.state);
+            this.decodeToken();
         }            
     });
+
+    if(this.isAuthorized) {
+      this.decodeToken();
+    }
   }
 
   public isAuthorized(): boolean {
     return this.oauthService.getAccessToken() !== null && this.oauthService.getAccessToken() !== "";
   }
 
-  public getUserInfo() {
-      return this.http.get("http://localhost:8080/user")
-                  .subscribe(data => {
-                      debugger
-                  });
+  public getUserName() {
+      return this.userName;
+  }
+
+  public getUserAvatar() {
+    return this.userAvatar;
   }
 
   public login() {
@@ -51,7 +61,14 @@ export class SecurityService {
   }
 
   public logout() {
-      this.oauthService.logOut();
+      this.oauthService.logOut(true);
   }
 
+  private decodeToken(){
+    const tokenInfo = jwt_decode(this.oauthService.getAccessToken());
+    if(tokenInfo) {
+      this.userName = tokenInfo.user_name;
+      this.userAvatar = tokenInfo.user_avatar;
+    }
+  }
 }
